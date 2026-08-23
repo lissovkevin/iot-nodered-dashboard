@@ -1,0 +1,528 @@
+[
+    {
+        "id": "4bb53b1b78a22f59",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "f44d5f442b33ef60",
+        "type": "mqtt-broker",
+        "name": "Broker",
+        "broker": "broker.emqx.io",
+        "port": 1883,
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "3",
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "de21768458933d61",
+        "type": "influxdb",
+        "hostname": "127.0.0.1",
+        "port": 8086,
+        "protocol": "http",
+        "database": "database",
+        "name": "Influxdbout",
+        "usetls": false,
+        "tls": "",
+        "influxdbVersion": "2.0",
+        "url": "https://eu-central-1-1.aws.cloud2.influxdata.com",
+        "timeout": 10,
+        "rejectUnauthorized": true
+    },
+    {
+        "id": "1b89357ba0845fe0",
+        "type": "ui-base",
+        "name": "My Dashboard",
+        "path": "/dashboard",
+        "appIcon": "",
+        "includeClientData": true,
+        "acceptsClientConfig": [
+            "ui-notification",
+            "ui-control"
+        ],
+        "showPathInSidebar": false,
+        "headerContent": "page",
+        "navigationStyle": "default",
+        "titleBarStyle": "default",
+        "showReconnectNotification": true,
+        "notificationDisplayTime": 1,
+        "showDisconnectNotification": true,
+        "allowInstall": false
+    },
+    {
+        "id": "c4e5247ecba338a2",
+        "type": "ui-theme",
+        "name": "Default Theme",
+        "colors": {
+            "surface": "#ffffff",
+            "primary": "#0094CE",
+            "bgPage": "#eeeeee",
+            "groupBg": "#ffffff",
+            "groupOutline": "#cccccc"
+        },
+        "sizes": {
+            "density": "default",
+            "pagePadding": "12px",
+            "groupGap": "12px",
+            "groupBorderRadius": "4px",
+            "widgetGap": "12px"
+        }
+    },
+    {
+        "id": "6ec412ea142f028e",
+        "type": "ui-page",
+        "name": "Page 1",
+        "ui": "1b89357ba0845fe0",
+        "path": "/page1",
+        "icon": "home",
+        "layout": "grid",
+        "theme": "c4e5247ecba338a2",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "9"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "order": 1,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "1ae8340d65a0b05c",
+        "type": "ui-group",
+        "name": "Sensor Dashboard",
+        "page": "6ec412ea142f028e",
+        "width": 6,
+        "height": 1,
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "094e9549a923254f",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "broker.emqx.io",
+        "port": 1883,
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "943944a7078926bd",
+        "type": "mqtt in",
+        "z": "4bb53b1b78a22f59",
+        "name": "",
+        "topic": "lnu/iot/kl223py/sensor",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "f44d5f442b33ef60",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 140,
+        "y": 360,
+        "wires": [
+            [
+                "326556e92e83d272",
+                "23356ff193df4b9b"
+            ]
+        ]
+    },
+    {
+        "id": "326556e92e83d272",
+        "type": "debug",
+        "z": "4bb53b1b78a22f59",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 280,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "dfacbca0d272ee9b",
+        "type": "influxdb out",
+        "z": "4bb53b1b78a22f59",
+        "influxdb": "de21768458933d61",
+        "name": "influx",
+        "measurement": "sensor_data",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "Kevin-IoT",
+        "bucket": "iot_data",
+        "x": 810,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "23356ff193df4b9b",
+        "type": "function",
+        "z": "4bb53b1b78a22f59",
+        "name": "function 1",
+        "func": "if (typeof msg.payload === \"string\") {\n    msg.payload = JSON.parse(msg.payload);\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 380,
+        "y": 360,
+        "wires": [
+            [
+                "dfacbca0d272ee9b",
+                "63701ccd61465e59"
+            ]
+        ]
+    },
+    {
+        "id": "91b15dbcc5139933",
+        "type": "ui-chart",
+        "z": "4bb53b1b78a22f59",
+        "group": "1ae8340d65a0b05c",
+        "name": "Sensor Dasboard",
+        "label": "chart",
+        "order": 2,
+        "chartType": "line",
+        "category": "topic",
+        "categoryType": "msg",
+        "xAxisLabel": "",
+        "xAxisProperty": "",
+        "xAxisPropertyType": "timestamp",
+        "xAxisType": "time",
+        "xAxisFormat": "",
+        "xAxisFormatType": "auto",
+        "xmin": "",
+        "xmax": "",
+        "yAxisLabel": "",
+        "yAxisProperty": "payload",
+        "yAxisPropertyType": "msg",
+        "ymin": "",
+        "ymax": "",
+        "bins": 10,
+        "action": "append",
+        "stackSeries": false,
+        "pointShape": "circle",
+        "pointRadius": 4,
+        "showLegend": true,
+        "removeOlder": 1,
+        "removeOlderUnit": "3600",
+        "removeOlderPoints": "",
+        "colors": [
+            "#0095ff",
+            "#ff0000",
+            "#ff7f0e",
+            "#2ca02c",
+            "#a347e1",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "textColor": [
+            "#666666"
+        ],
+        "textColorDefault": true,
+        "gridColor": [
+            "#e5e5e5"
+        ],
+        "gridColorDefault": true,
+        "width": 6,
+        "height": 8,
+        "className": "",
+        "interpolation": "linear",
+        "x": 850,
+        "y": 480,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "07e8fbac9b018ff3",
+        "type": "ui-button",
+        "z": "4bb53b1b78a22f59",
+        "group": "1ae8340d65a0b05c",
+        "name": "",
+        "label": "Toggle LED",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "iconPosition": "left",
+        "payload": "true",
+        "payloadType": "bool",
+        "topic": "topic",
+        "topicType": "msg",
+        "buttonColor": "",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 370,
+        "y": 200,
+        "wires": [
+            [
+                "3804ef29741cb80c"
+            ]
+        ]
+    },
+    {
+        "id": "bf778275c1021ac6",
+        "type": "ui-button",
+        "z": "4bb53b1b78a22f59",
+        "group": "1ae8340d65a0b05c",
+        "name": "",
+        "label": "Turn off",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "iconPosition": "left",
+        "payload": "false",
+        "payloadType": "bool",
+        "topic": "topic",
+        "topicType": "msg",
+        "buttonColor": "",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 400,
+        "y": 260,
+        "wires": [
+            [
+                "3804ef29741cb80c"
+            ]
+        ]
+    },
+    {
+        "id": "120e378690ed378e",
+        "type": "mqtt out",
+        "z": "4bb53b1b78a22f59",
+        "name": "",
+        "topic": "lnu/iot/kl223py/command/led",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "094e9549a923254f",
+        "x": 950,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "3804ef29741cb80c",
+        "type": "function",
+        "z": "4bb53b1b78a22f59",
+        "name": "function 2",
+        "func": "msg.payload = JSON.stringify({ state: msg.payload });\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 700,
+        "y": 220,
+        "wires": [
+            [
+                "120e378690ed378e"
+            ]
+        ]
+    },
+    {
+        "id": "7728a1c1fa99f1f9",
+        "type": "inject",
+        "z": "4bb53b1b78a22f59",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 110,
+        "y": 560,
+        "wires": [
+            [
+                "bf98a8220883580d"
+            ]
+        ]
+    },
+    {
+        "id": "bf98a8220883580d",
+        "type": "influxdb in",
+        "z": "4bb53b1b78a22f59",
+        "influxdb": "de21768458933d61",
+        "name": "",
+        "query": "from(bucket: \"iot_data\")\n  |> range(start: -30m)\n  |> filter(fn: (r) => r._measurement == \"sensor_data\")\n  |> filter(fn: (r) => r._field == \"value\")",
+        "rawOutput": false,
+        "precision": "",
+        "retentionPolicy": "",
+        "org": "Kevin-IoT",
+        "x": 290,
+        "y": 560,
+        "wires": [
+            [
+                "f1baf3876734ecb9"
+            ]
+        ]
+    },
+    {
+        "id": "f1baf3876734ecb9",
+        "type": "function",
+        "z": "4bb53b1b78a22f59",
+        "name": "function 3",
+        "func": "let points = msg.payload.map(r => ({ x: new Date(r._time).getTime(), y: r._value }));\nmsg.payload = [points];\nmsg.topic = \"lnu/iot/kl223py/sensor\";\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 500,
+        "y": 560,
+        "wires": [
+            [
+                "91b15dbcc5139933"
+            ]
+        ]
+    },
+    {
+        "id": "63701ccd61465e59",
+        "type": "function",
+        "z": "4bb53b1b78a22f59",
+        "name": "extract value",
+        "func": "msg.payload = msg.payload.value;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 590,
+        "y": 440,
+        "wires": [
+            [
+                "91b15dbcc5139933"
+            ]
+        ]
+    },
+    {
+        "id": "f26f459d2ec83bc0",
+        "type": "global-config",
+        "env": [],
+        "modules": {
+            "node-red-contrib-influxdb": "0.7.0",
+            "@flowfuse/node-red-dashboard": "1.30.2"
+        }
+    }
+]

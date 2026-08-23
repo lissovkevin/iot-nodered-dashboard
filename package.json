@@ -1,0 +1,13 @@
+{
+  "name": "iot-nodered-dashboard",
+  "version": "1.0.0",
+  "description": "Node-RED IoT dashboard",
+  "dependencies": {
+    "node-red": "^4.0.0",
+    "@flowfuse/node-red-dashboard": "*",
+    "node-red-contrib-influxdb": "*"
+  },
+  "scripts": {
+    "start": "node-red -u ."
+  }
+}
