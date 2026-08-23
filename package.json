@@ -8,6 +8,6 @@
     "node-red-contrib-influxdb": "*"
   },
   "scripts": {
-    "start": "node-red -u ."
+    "start": "node-red -u . -s settings.js"
   }
 }
